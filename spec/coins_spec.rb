@@ -27,4 +27,8 @@ describe('#coin_counter') do
     value = CoinCounter.new(16)
     expect(value.count_coins).to(eq('Dimes: 1, Nickels: 1, Pennies: 1'))
   end
+  it("should return two dimes, and four pennies if we have 24 cents") do
+    value = CoinCounter.new(24)
+    expect(value.count_coins).to(eq('Dimes: 2, Pennies: 4'))
+  end
 end
