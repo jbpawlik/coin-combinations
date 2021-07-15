@@ -35,4 +35,8 @@ end
     value = CoinCounter.new(25)
     expect(value.count_coins).to(eq('Quarters: 1'))
   end
+  it("should return the smallest number of coins needed to make change for the amount of cents") do
+    value = CoinCounter.new(149)
+    expect(value.count_coins).to(eq('Quarters: 5, Dimes: 2, Pennies: 4'))
+  end
 end
