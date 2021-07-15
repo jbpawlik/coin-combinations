@@ -25,6 +25,9 @@ class CoinCounter
       when 10..24
         @dimes = (value/10).floor()
         value -= 10 * @dimes
+      else
+        @quarters = (value/25).floor()
+        value -= 25 * @quarters
       end
     end
     coin_array = [@quarters, @dimes, @nickles, @pennies]
