@@ -20,8 +20,11 @@ class CoinCounter
         @pennies = value
         value -= value
       when 5..9
-        @nickles = value/5
+        @nickles = (value/5).floor()
         value -= 5
+      when 10..24
+        @dimes = (value/10).floor()
+        value -= 10
       end
     end
     coin_array = [@quarters, @dimes, @nickles, @pennies]
@@ -35,4 +38,3 @@ class CoinCounter
     return output_array.join(", ")
   end
 end
-
