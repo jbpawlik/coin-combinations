@@ -10,4 +10,9 @@ describe('#coin_counter') do
     value = CoinCounter.new(4)
     expect(value.count_coins).to(eq('Pennies: 4'))
   end
+  it("should return one nickel if we have five cents"
+  ) do
+    value = CoinCounter.new(5)
+    expect(value.count_coins).to(eq('Nickels: 1'))
+  end
 end

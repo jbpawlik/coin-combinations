@@ -13,10 +13,15 @@ class CoinCounter
   end
 
   def count_coins()
-    if @total_value < 5
-      return "Pennies: #{@total_value}"
-    else
-      return "That's too much!"
+    value = @total_value
+    case value
+    when 1..4
+      @pennies = value
+      "Pennies: #{@pennies}"
+    when 5
+      @nickles = value/5
+      "Nickels: #{@nickles}"
     end
   end
 end
+
