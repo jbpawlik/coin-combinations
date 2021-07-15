@@ -14,14 +14,25 @@ class CoinCounter
 
   def count_coins()
     value = @total_value
-    case value
-    when 1..4
-      @pennies = value
-      "Pennies: #{@pennies}"
-    when 5
-      @nickles = value/5
-      "Nickels: #{@nickles}"
+    until value === 0
+      case value
+      when 1..4
+        @pennies = value
+        value -= value
+      when 5..9
+        @nickles = value/5
+        value -= 5
+      end
     end
+    coin_array = [@quarters, @dimes, @nickles, @pennies]
+    coin_name_array = ["Quarters: ", "Dimes: ", "Nickels: ", "Pennies: "]
+    output_array = []
+    coin_array.each_with_index do |element, index|
+      if element != 0
+        output_array.push(coin_name_array[index]+element.to_s)
+      end
+    end
+    return output_array.join(", ")
   end
 end
 
