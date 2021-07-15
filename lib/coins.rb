@@ -13,9 +13,10 @@ class CoinCounter
   end
 
   def count_coins()
-    return "Pennies: #{@total_value}"
+    if @total_value < 5
+      return "Pennies: #{@total_value}"
+    else
+      return "That's too much!"
+    end
   end
-
 end
-
-Michael Reiersgaard <michael.reiersgaard@gmail.com>
